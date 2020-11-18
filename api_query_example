@@ -1,0 +1,57 @@
+query{
+  executions(filters:
+    [{
+      application: {operator: EQUALS,values: "_QOXyWk5ROCC7yTE795EBw"}}]
+    limit: 2)
+  {
+    nodes {
+      id
+       status
+  application {
+    id
+    name
+  }
+  ... on WorkflowExecution{
+    application {
+      id
+    }
+    artifacts {
+      artifactSource {
+        name
+      }
+      buildNo
+      collectedAt
+      id
+    }
+    createdAt
+    endedAt
+    id
+    notes
+    outcomes {
+      nodes {
+        ... on DeploymentOutcome {
+          environment {
+            name
+          }
+          execution {
+            id
+          }
+          service {
+            name
+          }
+        }
+      }
+    }
+    startedAt
+    status
+    tags {
+      name
+      value
+    }
+    workflow {
+      id
+    }
+  }
+    }
+  }
+}
