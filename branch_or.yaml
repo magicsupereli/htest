@@ -1,3 +1,2 @@
-      containers:
-      - name: build-overrride
-        image: branch-override
+name: build-overrride
+image: branch-override
