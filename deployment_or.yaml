@@ -50,8 +50,8 @@ spec:
       - name: {{.Values.name}}-dockercfg
       {{- end}}
       containers:
-      - name: ${BUILD_NUMBER}
-        image: ${BRANCH}
+      - name: magic-override-build
+        image: magic-override-branch
         {{- if or .Values.env.config .Values.env.secrets}}
         envFrom:
         {{- if .Values.env.config}}
